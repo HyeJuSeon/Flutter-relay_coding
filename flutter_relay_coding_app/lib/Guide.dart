@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 enum Season { Summer, Winter }
 
 class Guide extends StatefulWidget {
@@ -14,6 +13,8 @@ class _GuideState extends State<Guide> {
 
   //toggle button의 4칸짜리 리스트를 생성하고 값을 false로 설정
   List<bool> _selection = List.generate(4, (index) => false);
+  //mbti 유형이 저장된 list 초기는 esfp
+  List<String> _mbti = [];
 
   //선택되는 radio 값에 따라 변경되는 값
   String radio = 'Summer';
@@ -22,6 +23,11 @@ class _GuideState extends State<Guide> {
 
   @override
   Widget build(BuildContext context) {
+    _mbti.add('E');
+    _mbti.add('S');
+    _mbti.add('F');
+    _mbti.add('P');
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -81,10 +87,22 @@ class _GuideState extends State<Guide> {
               //Toggle Button
               ToggleButtons(
                 children: [
-                  Icon(Icons.arrow_back),
-                  Icon(Icons.arrow_upward),
-                  Icon(Icons.arrow_forward),
-                  Icon(Icons.arrow_downward)
+                  Text(
+                    _mbti[0],
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    _mbti[1],
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    _mbti[2],
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    _mbti[3],
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
                 ],
                 isSelected: _selection,
                 //toggle button이 눌릴 때 마다 selection 리스트의 true, false값을 바꿔줌
@@ -92,6 +110,22 @@ class _GuideState extends State<Guide> {
                   //state를 다시 갱신 시켜주는 메소드
                   setState(() {
                     _selection[index] = !_selection[index];
+                    switch (index) {
+                      case 0:
+                        _selection[0] ? _mbti[0] = 'I' : _mbti[0] = 'E';
+                        break;
+                      case 1:
+                        _selection[1] ? _mbti[1] = 'N' : _mbti[1] = 'S';
+                        break;
+                      case 2:
+                        _selection[2] ? _mbti[2] = 'T' : _mbti[2] = 'F';
+                        break;
+                      case 3:
+                        _selection[3] ? _mbti[3] = 'J' : _mbti[3] = 'P';
+                        break;
+                      default:
+                        break;
+                    }
                   });
                 },
               )
