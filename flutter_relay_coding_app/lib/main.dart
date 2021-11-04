@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:flutter_relay_coding_app/guide_line.dart';
-=======
 import 'package:flutter_relay_coding_app/Guide.dart';
->>>>>>> upstream/main
 
 void main() {
   runApp(MyApp());
@@ -23,22 +19,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-<<<<<<< HEAD
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[400],
-      body: Center(
-        child: ElevatedButton(
-          child: Text('here'),
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Guide()));
-          },
-        ),
-=======
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,13 +116,10 @@ class MyHomePage extends StatelessWidget {
             ],
           ),
         ],
->>>>>>> upstream/main
       ),
     );
   }
 }
-<<<<<<< HEAD
-=======
 
 // 버튼 함수
 btn(str, context) {
@@ -184,8 +161,7 @@ btn(str, context) {
                 context, MaterialPageRoute(builder: (context) => Guide()));
           }
 
-          print("확인");
+          print("확인.");
         }),
   );
 }
->>>>>>> upstream/main
