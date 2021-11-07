@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_relay_coding_app/guideline.dart';
+import 'package:flutter_relay_coding_app/pages-sample/0102a_first.dart';
+import 'package:flutter_relay_coding_app/pages-sample/0102a_second.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,15 +45,8 @@ class MyHomePage extends StatelessWidget {
                       SizedBox(height: 20), // 버튼 사이 공백 생성
 
                       // 커스텀 버튼 생성, 각 참여자들의 페이지로 이동
-                      PageBtn("guidelint", context, Guide()),
-                      PageBtn("guidelint", context, Guide()),
-                      PageBtn("guidelint", context, Guide()),
-                      PageBtn("guidelint", context, Guide()),
-                      PageBtn("guidelint", context, Guide()),
-                      PageBtn("guidelint", context, Guide()),
-                      PageBtn("guidelint", context, Guide()),
-                      PageBtn("guidelint", context, Guide()),
-                      PageBtn("guidelint", context, Guide())
+                      PageBtn("guidelint", context, Page0102AFisrt()),
+                      PageBtn("guidelint", context, Page0102ASecond()),
                     ],
                   ))
             ],
