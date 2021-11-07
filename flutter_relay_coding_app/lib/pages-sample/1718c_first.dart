@@ -1,16 +1,17 @@
 ///////////////////////////////////////// 샘플페이지 입니다
 ////////////////////////////////////////// 수정 금지
 ///////////////////////////////////////// pages 폴더에 자신 페이지 추가하기
-//////////////////////////////////////////// pages 폴더에 자신 페이지 추가하기
+///////////////////// 대문자 소문자 유의!
+/////////////////// 파일 이름은 모두 소문자, 클래스 이름은 대문자로 시작하는 낙타체(단어 시작 글자만 대문자)
 
 import 'package:flutter/material.dart';
 
-class Page0102AFisrt extends StatefulWidget {
+class Page1718CFisrt extends StatefulWidget {
   @override
-  _Page0102AFisrtState createState() => _Page0102AFisrtState();
+  _Page1718CFisrtState createState() => _Page1718CFisrtState();
 }
 
-class _Page0102AFisrtState extends State<Page0102AFisrt> {
+class _Page1718CFisrtState extends State<Page1718CFisrt> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

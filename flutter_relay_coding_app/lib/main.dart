@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_relay_coding_app/guideline.dart';
-import 'package:flutter_relay_coding_app/pages-sample/0102a_first.dart';
-import 'package:flutter_relay_coding_app/pages-sample/0102a_second.dart';
+import 'package:flutter_relay_coding_app/pages-sample/0102a_first.dart'; // 후에 삭제
+import 'package:flutter_relay_coding_app/pages-sample/0102a_second.dart'; // 후에 삭제
 
 void main() {
   runApp(MyApp());
