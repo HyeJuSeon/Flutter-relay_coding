@@ -29,6 +29,7 @@ class _GuideState extends State<Guide> {
     _mbti.add('P');
 
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 230, 230, 230),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
