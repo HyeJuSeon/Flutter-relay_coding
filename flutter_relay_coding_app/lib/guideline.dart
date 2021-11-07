@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_relay_coding_app/guideline2.dart';
 
 enum Season { Summer, Winter }
 
@@ -14,7 +15,7 @@ class _GuideState extends State<Guide> {
   //toggle button의 4칸짜리 리스트를 생성하고 값을 false로 설정
   List<bool> _selection = List.generate(4, (index) => false);
   //mbti 유형이 저장된 list 초기는 esfp
-  List<String> _mbti = [];
+  List<String> _mbti = ['E', 'S', 'F', 'P'];
 
   //선택되는 radio 값에 따라 변경되는 값
   String radio = 'Summer';
@@ -23,11 +24,6 @@ class _GuideState extends State<Guide> {
 
   @override
   Widget build(BuildContext context) {
-    _mbti.add('E');
-    _mbti.add('S');
-    _mbti.add('F');
-    _mbti.add('P');
-
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 230, 230, 230),
       body: Column(
@@ -129,9 +125,10 @@ class _GuideState extends State<Guide> {
                     }
                   });
                 },
-              )
+              ),
             ],
           ),
+          Text('$_mbti'),
           SizedBox(
             height: 80,
           ),
@@ -174,22 +171,39 @@ class _GuideState extends State<Guide> {
           SizedBox(
             width: 100,
           ),
-          Text('선택된 버튼: $radio')
+          Text('선택된 버튼: $radio'),
+
+          //보내기 버튼
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.red, onPrimary: Colors.white),
+              onPressed: () {
+                // 데이터 전달하면서 페이지 전환 방법
+                Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Guide2(data1:elevate, data2:_mbti, data3: radio,)));
+              },
+              child: Text('send data')),
         ],
       ),
-      //뒤로가기 버튼
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.transparent,
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: Icon(
-          Icons.arrow_back,
-          color: Colors.black,
-        ),
-        elevation: 0.0,
-      ),
+
+      // 뒤로 가기 버튼 추가
+      floatingActionButton: BackButton(context),
       floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
     );
   }
+}
+
+// 뒤로가기 버튼
+BackButton(context) {
+  return FloatingActionButton(
+    backgroundColor: Colors.transparent,
+    onPressed: () {
+      Navigator.pop(context);
+    },
+    child: Icon(
+      Icons.arrow_back,
+      color: Colors.black,
+    ),
+    elevation: 0.0,
+  );
 }

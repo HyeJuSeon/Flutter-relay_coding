@@ -45,8 +45,8 @@ class MyHomePage extends StatelessWidget {
                       SizedBox(height: 20), // 버튼 사이 공백 생성
 
                       // 커스텀 버튼 생성, 각 참여자들의 페이지로 이동
-                      PageBtn("guidelint", context, Page0102AFisrt()),
-                      PageBtn("guidelint", context, Page0102ASecond()),
+                      PageBtn("11111", context, Page0102AFisrt()),
+                      PageBtn("22222", context, Page0102ASecond()),
                     ],
                   ))
             ],
