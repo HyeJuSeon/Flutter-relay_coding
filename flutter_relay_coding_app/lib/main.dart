@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:flutter_relay_coding_app/guide_line.dart';
-=======
-import 'package:flutter_relay_coding_app/Guide.dart';
->>>>>>> upstream/main
+import 'package:flutter_relay_coding_app/guideline.dart';
+import 'package:flutter_relay_coding_app/pages-sample/0102a_first.dart'; // 후에 삭제
+import 'package:flutter_relay_coding_app/pages-sample/0102a_second.dart'; // 후에 삭제
 
 void main() {
   runApp(MyApp());
@@ -14,159 +12,71 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.grey,
-      ),
       home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-<<<<<<< HEAD
-  const MyHomePage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[400],
-      body: Center(
-        child: ElevatedButton(
-          child: Text('here'),
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Guide()));
-          },
-        ),
-=======
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // 앱 바 모양 없애기
-      appBar: AppBar(
-        elevation: 0,
-      ),
-      //  const Color(0xff294959)
-      backgroundColor: Colors.grey,
-
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          // devFest2021 이미지, 중앙 상단에 배치
-          Center(
-            child: Image.asset(
-              'image/devFest2021.png',
-              fit: BoxFit.contain,
-              height: 80,
-            ),
-          ),
-
+        backgroundColor: Color.fromARGB(255, 230, 230, 230),
+        body: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Column(
             children: <Widget>[
-              SizedBox(
-                height: 20.0,
-              ),
-              Center(
-                child: Text(
-                  "GDSC SCH",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18, color: Colors.black),
+              Container(
+                padding: EdgeInsets.only(top: 60),
+                child: Image.asset(
+                  'image/devFest2021.png',
+                  fit: BoxFit.contain,
+                  height: 80,
                 ),
-              )
-            ],
-          ),
-
-          // 가이드 라인 버튼 생성
-          Column(
-            children: <Widget>[
-              SizedBox(
-                height: 20.0,
               ),
-              Center(
-                child: btn("guideline", context),
-              )
+              SizedBox(height: 20),
+              Container(
+                  height: 500,
+                  width: 300,
+                  child: ListView(
+                    padding: const EdgeInsets.all(8),
+                    children: <Widget>[
+                      GuideBtn(context, Guide()), // 커스텀 버튼 생성, 각 참여자들의 페이지로 이동
+
+                      SizedBox(height: 20), // 버튼 사이 공백 생성
+
+                      // 커스텀 버튼 생성, 각 참여자들의 페이지로 이동
+                      PageBtn("guidelint", context, Page0102AFisrt()),
+                      PageBtn("guidelint", context, Page0102ASecond()),
+                    ],
+                  ))
             ],
           ),
-
-          SizedBox(
-            height: 20.0,
-          ), // 가이드 라인과 릴레이 코딩 버튼 사이의 공간
-
-          Column(
-            children: <Widget>[
-              SizedBox(
-                height: 20.0,
-              ),
-              Center(
-                child: btn("A", context),
-              )
-            ],
-          ),
-
-          Column(
-            children: <Widget>[
-              SizedBox(
-                height: 20.0,
-              ),
-              Center(
-                child: btn("B", context),
-              )
-            ],
-          ),
-
-          Column(
-            children: <Widget>[
-              SizedBox(
-                height: 20.0,
-              ),
-              Center(
-                child: btn("C", context),
-              )
-            ],
-          ),
-
-          Column(
-            children: <Widget>[
-              SizedBox(
-                height: 20.0,
-              ),
-              Center(
-                child: btn("D", context),
-              )
-            ],
-          ),
-        ],
->>>>>>> upstream/main
-      ),
-    );
+        ]));
   }
 }
-<<<<<<< HEAD
-=======
 
-// 버튼 함수
-btn(str, context) {
+// 버튼 반환 메서드 : (버튼의 텍스트, 현재 페이지 context, 이동할 페이지 클래스)를 매개변수로 받음
+PageBtn(String str, BuildContext context, pageClass) {
   return Container(
-    padding: EdgeInsets.all(5),
+    padding: EdgeInsets.all(10),
     child: InkWell(
         child: Container(
             width: 200,
             height: 50,
             padding: EdgeInsets.all(12.0),
             decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.all(Radius.circular(40)),
+                color: Colors.white,
+                border: Border.all(
+                  color: Color.fromARGB(255, 0, 151, 167),
+                  style: BorderStyle.solid,
+                  width: 3,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(20)),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(4.0, 4.0),
-                    blurRadius: 15.0,
-                    spreadRadius: 1.0,
-                  ),
-                  BoxShadow(
-                    color: Colors.white,
-                    offset: Offset(-4.0, -4.0),
-                    blurRadius: 15.0,
-                    spreadRadius: 1.0,
+                    offset: Offset(1.0, 3.0),
+                    blurRadius: 8.0,
+                    spreadRadius: 0.5,
                   ),
                 ]),
             child: Center(
@@ -179,13 +89,43 @@ btn(str, context) {
 
         // 페이지 이동
         onTap: () {
-          if (str == "guideline") {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Guide()));
-          }
-
-          print("확인");
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => pageClass));
         }),
   );
 }
->>>>>>> upstream/main
+
+// 가이드라인 버튼 반환 메서드 : (버튼의 텍스트, 현재 페이지 context, 이동할 페이지 클래스)를 매개변수로 받음
+GuideBtn(BuildContext context, pageClass) {
+  return Container(
+    padding: EdgeInsets.all(10),
+    child: InkWell(
+        child: Container(
+            width: 200,
+            height: 50,
+            padding: EdgeInsets.all(12.0),
+            decoration: BoxDecoration(
+                color: Color.fromARGB(255, 0, 151, 167),
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(1.0, 3.0),
+                    blurRadius: 8.0,
+                    spreadRadius: 0.5,
+                  ),
+                ]),
+            child: Center(
+              child: Text(
+                'Guideline',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
+            )),
+
+        // 페이지 이동
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => pageClass));
+        }),
+  );
+}
