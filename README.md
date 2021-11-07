@@ -45,7 +45,7 @@ for devfest 2021
   이원영 : 0102a_first.dart, 0102b_second.dart (각각의 파일 내의 클래스는 Page0102AFirst, Page0102BSecond)  
   한정우 : 0102b_first.dart, 0102a_second.dart (각각의 파일 내의 클래스는 Page0102BFirst, Page0102ASecond)  
   조준장 : 0506c_first.dart, 0506b_second.dart (각각의 파일 내의 클래스는 Page0506CFirst, Page0506BSecond)  
-  추창우 : 0506b_first.dart, 0506b_second.dart (각각의 파일 내의 클래스는 Page0506BFirst, Page0506CSecond)  
+  추창우 : 0506b_first.dart, 0506c_second.dart (각각의 파일 내의 클래스는 Page0506BFirst, Page0506CSecond)  
 
 - 꼭 flutter_relay_coding_app/pages 디렉토리에 넣어주시고! pull request 생성해주세요!
 
