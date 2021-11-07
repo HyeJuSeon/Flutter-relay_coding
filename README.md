@@ -47,6 +47,6 @@ for devfest 2021
   조준장 : 0506c_first.dart, 0506b_second.dart (각각의 파일 내의 클래스는 Page0506CFirst, Page0506BSecond)  
   추창우 : 0506b_first.dart, 0506b_second.dart (각각의 파일 내의 클래스는 Page0506BFirst, Page0506CSecond)  
 
-꼭 flutter_relay_coding_app/pages 디렉토리에 넣어주시고! pull request 생성해주세요!
+- 꼭 flutter_relay_coding_app/pages 디렉토리에 넣어주시고! pull request 생성해주세요!
 
 # 랜덤 배정 결과
