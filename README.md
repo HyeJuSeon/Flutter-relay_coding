@@ -43,7 +43,7 @@ for devfest 2021
   으로 배정되었다면 생성해야 할 파일은  
     
   이원영 : 0102a_first.dart, 0102b_second.dart (각각의 파일 내의 클래스는 Page0102AFirst, Page0102BSecond)  
-  한정우 : 0102b_first.dart, 0102a_second.dart (각각의 파일 내의 클래스는 Page0102AFirst, Page0102BSecond)  
+  한정우 : 0102b_first.dart, 0102a_second.dart (각각의 파일 내의 클래스는 Page0102BFirst, Page0102ASecond)  
   조준장 : 0506c_first.dart, 0506b_second.dart (각각의 파일 내의 클래스는 Page0506CFirst, Page0506BSecond)  
   추창우 : 0506b_first.dart, 0506b_second.dart (각각의 파일 내의 클래스는 Page0506BFirst, Page0506CSecond)  
 
