@@ -1,7 +1,7 @@
 # Flutter-relay_coding
 for devfest 2021
 
-# 코딩 전 페이지 먼저 추가하기
+## 코딩 전 페이지 먼저 추가하기
 - 본 레포를 fork하여 자신 로컬에서 작업  
 - 인당 2개의 .dart 파일 생성  
 - 본레포/flutter_relay_coding_app/pager-sample/0102a_first.dart 파일을 복사하여 /page 폴더에 인당 2개씩 붙여넣기 후 수정  
@@ -49,4 +49,6 @@ for devfest 2021
 
 - 꼭 flutter_relay_coding_app/pages 디렉토리에 넣어주시고! pull request 생성해주세요!
 
-# 랜덤 배정 결과
+## 랜덤 배정 결과
+  
+  
