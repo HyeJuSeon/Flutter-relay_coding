@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_relay_coding_app/guideline.dart';
-import 'package:flutter_relay_coding_app/pages-sample/0102a_first.dart'; // 후에 삭제
-import 'package:flutter_relay_coding_app/pages-sample/0102a_second.dart'; // 후에 삭제
+import 'package:flutter_relay_coding_app/pages/first_page.dart';
+import 'package:flutter_relay_coding_app/pages/second_page.dart';
+import 'package:flutter_relay_coding_app/pages/third_page.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -40,13 +41,63 @@ class MyHomePage extends StatelessWidget {
                   child: ListView(
                     padding: const EdgeInsets.all(8),
                     children: <Widget>[
-                      GuideBtn(context, Guide()), // 커스텀 버튼 생성, 각 참여자들의 페이지로 이동
+                      // GuideBtn(context, Guide()), // 커스텀 버튼 생성, 각 참여자들의 페이지로 이동
 
                       SizedBox(height: 20), // 버튼 사이 공백 생성
 
                       // 커스텀 버튼 생성, 각 참여자들의 페이지로 이동
-                      PageBtn("11111", context, Page0102AFisrt()),
-                      PageBtn("22222", context, Page0102ASecond()),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.black54, onPrimary: Colors.white, fixedSize: Size(90, 50)),
+                          onPressed: () {
+                            // 데이터 전달하면서 페이지 전환 방법
+                            Navigator.push(
+                                context, MaterialPageRoute(builder: (context) => PageFisrt()));
+                          },
+                          child: Text(
+                            '1. 개발자 MBTI',
+                            style: TextStyle(fontSize: 20)
+                          ),
+                      ),
+
+                      Container(
+                        height: 20,
+                      ),
+
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.black54, onPrimary: Colors.white, fixedSize: Size(90, 50)),
+                        onPressed: () {
+                          // 데이터 전달하면서 페이지 전환 방법
+                          Navigator.push(
+                              context, MaterialPageRoute(builder: (context) => PageSecond()));
+                        },
+                        child: Text(
+                            '2. 오늘의 운세',
+                            style: TextStyle(fontSize: 20)
+                        ),
+                      ),
+
+                      Container(
+                        height: 20,
+                      ),
+
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.black54, onPrimary: Colors.white, fixedSize: Size(90, 50)),
+                        onPressed: () {
+                          // 데이터 전달하면서 페이지 전환 방법
+                          Navigator.push(
+                              context, MaterialPageRoute(builder: (context) => PageThird()));
+                        },
+                        child: Text(
+                            '3. 코딩 퀴즈',
+                            style: TextStyle(fontSize: 20)
+                        ),
+                      ),
+
+                      // PageBtn("2. 오늘의 운세", context, Page0102ASecond()),
+                      // PageBtn("3. 코딩 퀴즈", context, Page0102ASecond()),
                     ],
                   ))
             ],
